@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dortmund 2026 · Juup, Jelle &amp; Tido</title>
+  <meta name="description" content="Weekend Dortmund 20–22 november 2026. Kerstmarkt, stadion, ijshockey, jazz, bier en goed eten — alles wat je dat weekend kunt doen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay">
+      <p class="eyebrow">Juup · Jelle · Tido — Mannenweekend 2026</p>
+      <h1>Dortmund</h1>
+      <p class="dates">vrijdag 20 — zondag 22 november 2026</p>
+      <p class="tagline">Glühwein, Gelbe Wand, ijshockey &amp; Bergmann-bier — drie dagen Ruhrgebiet ⚫🟡</p>
+      <a class="cta" href="#overzicht">Bekijk het programma ↓</a>
+    </div>
+  </header>
+
+  <nav class="topnav">
+    <a href="#overzicht">Overzicht</a>
+    <a href="#kaart">Kaart</a>
+    <a href="#dit-weekend">Alleen dit weekend</a>
+    <a href="#vrijdag">Vrijdag</a>
+    <a href="#zaterdag">Zaterdag</a>
+    <a href="#zondag">Zondag</a>
+    <a href="#eten">Eten</a>
+    <a href="#drinken">Bars</a>
+    <a href="#reserveren">Reserveren</a>
+    <a href="#praktisch">Praktisch</a>
+  </nav>
+
+  <main>
+    <section id="overzicht" class="section">
+      <h2>Het weekend in één oogopslag</h2>
+      <div class="overview-grid">
+        <div class="card">
+          <h3>🏠 Verblijf</h3>
+          <p>Airbnb aan de <strong>Wenkerstraße 10, 44141 Dortmund</strong> — in het Kaiserstraßenviertel (Innenstadt-Ost). Check-in <strong>vr 20 nov 14:00</strong>, check-out <strong>zo 22 nov 11:00</strong>. Centrum is 15–20 min lopen, Westfalenpark om de hoek.</p>
+        </div>
+        <div class="card">
+          <h3>🎄 Weihnachtsstadt</h3>
+          <p>De kerstmarkt is net open (soft opening do 19 nov). Vr &amp; za 11–22 uur, glühweinkramen tot 23 uur. <strong>Zondag 22 nov is de markt dicht</strong> (Totensonntag) — dus vrijdag- en zaterdagavond zijn de momenten.</p>
+        </div>
+        <div class="card">
+          <h3>⚽ Voetbal</h3>
+          <p>BVB speelt dit weekend helaas <strong>uit</strong> bij Gladbach (za 15:30). Wél: Stadium Walk + Borusseum op zaterdagochtend, en de wedstrijd kijken in een echte BVB-Kneipe. Thuis: Eisadler-ijshockey op vrijdagavond.</p>
+        </div>
+        <div class="card">
+          <h3>🍺 Bier &amp; eten</h3>
+          <p>Dortmund is historisch dé bierstad van Duitsland. Hövels Hausbrauerei, Bergmann Kiosk, Wenkers am Markt. Uitgaan in het Kreuzviertel en het Brückstraßenviertel.</p>
+        </div>
+      </div>
+
+      <div class="timeline three">
+        <div class="t-item"><span>Vr 20</span><p>Aankomst · Fußballmuseum · Kerstmarkt · Ijshockey of jazz</p></div>
+        <div class="t-item"><span>Za 21</span><p>Markt · Stadiontour · BVB-wedstrijd in de kroeg · Kerstmarkt · Stappen</p></div>
+        <div class="t-item"><span>Zo 22</span><p>Brunch · Phoenix-See of Zeche Zollern · Naar huis</p></div>
+      </div>
+
+      <div class="tip">💡 <strong>Belangrijk:</strong> zondag 22 november is <em>Totensonntag</em> — een stille feestdag in NRW. Winkels dicht, kerstmarkt dicht, geen dansfeesten tot 18:00. Musea, parken en horeca zijn gewoon open. Plan de "grote" avonden dus op vrijdag en zaterdag.</div>
+    </section>
+
+    <section id="kaart" class="section map-section">
+      <h2>🗺️ Alles op de kaart</h2>
+      <p class="day-intro">Het huis (🏠) ligt oostelijk van het centrum. Alles in de binnenstad is te belopen; het stadion en Phoenix-West doe je met de U-Bahn (U45/U46 richting Stadion, of U41 naar Hörde). Klik op een marker voor details.</p>
+
+      <div id="trip-map" aria-label="Kaart van Dortmund met alle locaties"></div>
+
+      <div class="map-legend">
+        <div class="map-legend-item"><span class="map-legend-num" style="background:#fde100;color:#141414">🏠</span> Airbnb — Wenkerstraße 10</div>
+        <div class="map-legend-item"><span class="map-legend-num">1</span> Hauptbahnhof &amp; Deutsches Fußballmuseum</div>
+        <div class="map-legend-item"><span class="map-legend-num">2</span> Weihnachtsstadt — Hansaplatz / Alter Markt</div>
+        <div class="map-legend-item"><span class="map-legend-num">3</span> Dortmunder U</div>
+        <div class="map-legend-item"><span class="map-legend-num">4</span> Signal Iduna Park &amp; Borusseum</div>
+        <div class="map-legend-item"><span class="map-legend-num">5</span> Eissportzentrum Westfalen (Eisadler)</div>
+        <div class="map-legend-item"><span class="map-legend-num">6</span> domicil (Jazztage)</div>
+        <div class="map-legend-item"><span class="map-legend-num">7</span> Kreuzviertel (kroegen)</div>
+        <div class="map-legend-item"><span class="map-legend-num">8</span> Westfalenpark &amp; Florianturm</div>
+        <div class="map-legend-item"><span class="map-legend-num">9</span> Phoenix des Lumières</div>
+        <div class="map-legend-item"><span class="map-legend-num">10</span> Phoenix-See (Hörde)</div>
+        <div class="map-legend-item"><span class="map-legend-num">11</span> Zeche Zollern (LWL-Museum)</div>
+      </div>
+    </section>
+
+    <section id="dit-weekend" class="section">
+      <h2>🎟️ Alleen dít weekend</h2>
+      <p class="day-intro">Dingen die specifiek op 20, 21 of 22 november 2026 plaatsvinden. Kies er een paar uit en koop vooraf kaarten waar nodig.</p>
+
+      <div class="event-grid">
+        <div class="event-card">
+          <span class="when">Vr 20 nov · 20:00</span>
+          <h4>🏒 Eisadler Dortmund – Adendorfer EC</h4>
+          <p>Ijshockey in de Regionalliga West. Rauw, goedkoop, bier in de hand, luid publiek. Een onderschatte vrijdagavond. Inloop 18:45; voorverkoop sluit 18:30.</p>
+          <span class="where">Eissportzentrum Westfalen, Strobelallee 33 · tickets via Vereinsticket</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Vr 20 nov · 20:00</span>
+          <h4>🎷 Jazztage: Julie Campiche "Unspoken" / Nucleus</h4>
+          <p>De 33e Jazztage Dortmund lopen van 28 okt t/m 28 nov. Vrijdag speelt de Zwitserse harpiste Julie Campiche met haar kwartet — modern, experimenteel, sfeervol.</p>
+          <span class="where">domicil, Hansastraße 7–11 · tickets via domicil / ADticket</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Vr 20 nov · 20:00</span>
+          <h4>🎻 DakhaBrakha</h4>
+          <p>Oekraïens "ethno-chaos"-kwartet met de hoge wollen mutsen. Spectaculaire live act in het prachtige Konzerthaus.</p>
+          <span class="where">Konzerthaus Dortmund, Brückstraße 21</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Vr 20 nov · 18:00</span>
+          <h4>🕯️ Candlelight: Ed Sheeran &amp; Coldplay</h4>
+          <p>Strijkkwartet bij kaarslicht in de Pauluskirche. Vanaf €18. Mooie, rustige opener vóór het diner.</p>
+          <span class="where">Pauluskirche, Schützenstraße 35 (Nordstadt)</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Za 21 nov · 15:30</span>
+          <h4>⚽ Borussia Mönchengladbach – Borussia Dortmund</h4>
+          <p>10e speelronde Bundesliga. Uitwedstrijd, dus kijken in een BVB-kroeg: <strong>Strobels</strong> (naast het stadion), <strong>Klubhaus</strong> of <strong>TorFabrik Sky Sportsbar</strong>. Of 1u20 met de trein naar Borussia-Park als iemand aan kaarten komt.</p>
+          <span class="where">Borussia-Park, Mönchengladbach · of een Kneipe in Dortmund</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Za 21 nov · 20:00</span>
+          <h4>🎷 Jazztage: Fallen Crooner</h4>
+          <p>Vocale jazz met een experimentele rand. Zaterdagavond in de domicil-zaal, daarna de lounge-bar beneden.</p>
+          <span class="where">domicil, Hansastraße 7–11</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Za 21 nov · avond</span>
+          <h4>🤘 Soulbound &amp; Hell Boulevard</h4>
+          <p>Metal/dark rock in de Junkyard — industrieel clubje aan de Hafen. Voor als het ruig mag.</p>
+          <span class="where">Junkyard, Schlägelstraße 57</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Vr 20 &amp; za 21 nov · 11–22 uur</span>
+          <h4>🎄 Weihnachtsstadt Dortmund <span class="badge">zo dicht</span></h4>
+          <p>Ruim 250 kramen rond Hansaplatz, Alter Markt en Reinoldikirche. De "grootste kerstboom ter wereld" (45 m, 1.700 sparren) staat al op de Hansaplatz — officieel aangestoken op ma 23 nov, maar de markt draait al volop. Jahresbecher-glühwein scoren.</p>
+          <span class="where">Hansaplatz · Alter Markt · Westenhellweg</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Za 21 nov · 08–14 uur</span>
+          <h4>🧀 Hansa Wochenmarkt</h4>
+          <p>Grote zaterdagmarkt midden tussen de kerstkramen. Perfect voor een ontbijt-rondje: Reibekuchen, kaas, worst, koffie.</p>
+          <span class="where">Hansaplatz</span>
+        </div>
+        <div class="event-card">
+          <span class="when">Hele weekend</span>
+          <h4>🎨 Phoenix des Lumières: Matisse + Frida Kahlo</h4>
+          <p>Immersieve projectie-show in de oude Hochofen-hal op Phoenix-West. Vr 11–19, za/zo 10–18:15. Weekend €18,90. Combineert goed met de Bergmann Brauerei ernaast.</p>
+          <span class="where">Phoenixplatz 4, Hörde</span>
+        </div>
+      </div>
+
+      <div class="tip">🚫 <strong>Niet dit weekend:</strong> BVB thuis (pas zo 29 nov vs Leverkusen en di 24 nov vs Arsenal in de CL), grote Westfalenhalle-shows (Kaya Yanar 27 nov, Night of the Proms 28 nov). De officiële kerstboom-illuminatie is ma 23 nov 18:00 — één dag te laat.</div>
+    </section>
+
+    <section id="vrijdag" class="section day">
+      <div class="day-header">
+        <span class="day-num">Dag 1</span>
+        <h2>Vrijdag 20 november — Aankomst &amp; kerstmarkt</h2>
+      </div>
+      <p class="day-intro">Rustig inkomen, de stad verkennen vanuit het Fußballmuseum, dan de kerstmarkt in en 's avonds kiezen tussen ijshockey en jazz.</p>
+      <ul class="schedule">
+        <li><strong>14:00</strong> — Check-in Airbnb, Wenkerstraße 10. Tassen neer, jas aan.</li>
+        <li><strong>15:00</strong> — Lopen (20 min) of U-Bahn naar het <strong>Deutsche Fußballmuseum</strong> tegenover het Hauptbahnhof. WK-beker van '54/'74/'90/'14, Bundesliga-hal, 3D-cinema. Reken op 2 uur. Open tot 18:00 (laatste toegang 17:00). Alternatief: het <strong>Dortmunder U</strong> (Museum Ostwall, gratis; vr tot 20:00).</li>
+        <li><strong>17:15</strong> — De <strong>Weihnachtsstadt</strong> in via Hansaplatz: eerste glühwein onder de grote boom, Reibekuchen, Bratwurst. Wandel door naar Alter Markt en de Reinoldikirche.</li>
+        <li><strong>18:30</strong> — Eten. Vlakbij de markt: <strong>Hövels Hausbrauerei</strong> (Hoher Wall 5, eigen Bitterbier, Westfaalse keuken) of <strong>Wenkers am Markt</strong> (Betenstraße 1, grote brouwerij-kroeg). Reserveer!</li>
+        <li><strong>20:00</strong> — Avondprogramma, kies:
+          <ul>
+            <li>🏒 <strong>Eisadler Dortmund – Adendorfer EC</strong>, Eissportzentrum Westfalen (U45/U46 naar Westfalenhallen). Aanrader voor de sfeer.</li>
+            <li>🎷 <strong>Jazztage: Julie Campiche / Nucleus</strong> in domicil (Hansastraße, 3 min van de markt).</li>
+            <li>🎻 <strong>DakhaBrakha</strong> in het Konzerthaus (Brückstraße).</li>
+          </ul>
+        </li>
+        <li><strong>22:30</strong> — Afzakken in het <strong>Kreuzviertel</strong> (U42 Möllerbrücke / 25 min lopen): <em>The Londoner</em>, <em>Grüner Salon</em>, <em>Olafs</em>, of in het centrum de <em>domicil Lounge Bar</em>.</li>
+      </ul>
+
+      <div class="info-box">
+        <h4>🧭 Vanuit de Wenkerstraße</h4>
+        <ul>
+          <li><strong>Te voet</strong>: Kaiserstraße → Ostwall → Alter Markt ≈ 18–20 min. De Kaiserstraße zelf heeft volop cafés en restaurants (Brüderlich, Yamas, Küchenwirtschaft Bismarck).</li>
+          <li><strong>U-Bahn</strong>: halte <em>Ostentor</em> of <em>Kampstraße</em> (U43/U44) voor het centrum; <em>Westfalenpark</em> (U45/U49) is 5 min lopen naar het zuiden.</li>
+          <li><strong>Westfalenpark</strong> ligt letterlijk om de hoek — leuk voor een ochtendrondje met Florianturm-uitzicht.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="zaterdag" class="section day">
+      <div class="day-header">
+        <span class="day-num">Dag 2</span>
+        <h2>Zaterdag 21 november — Stadion, wedstrijd &amp; stappen</h2>
+      </div>
+      <p class="day-intro">De grote dag: BVB in de ochtend, de uitwedstrijd 's middags in de kroeg, kerstmarkt-ronde twee en daarna het Brückstraßenviertel of Kreuzviertel in.</p>
+      <ul class="schedule">
+        <li><strong>09:30</strong> — Ontbijt op de <strong>Hansa Wochenmarkt</strong> (Hansaplatz, 8–14 uur) of een stevige brunch bij <strong>VRÜH All Day Breakfast</strong> / <strong>Café Schrader</strong> op de Kaiserstraße.</li>
+        <li><strong>11:00</strong> — <strong>Signal Iduna Park Stadium Walk + Borusseum</strong> (U45/U46 halte Stadion). Zelf-rondleiding door kleedkamers, spelerstunnel en de Südtribüne — de Gelbe Wand, 25.000 staanplaatsen. €18 combi-ticket. Boek vooraf: de walk draait alleen op geselecteerde dagen (op een uit-dag normaal gesproken wél open, check de BVB-kalender).</li>
+        <li><strong>13:30</strong> — Currywurst bij <strong>Strobels</strong> (direct naast het stadion, dé BVB-kroeg) en daar blijven hangen voor de wedstrijd. Alternatief in het centrum: <strong>Klubhaus Dortmund</strong> (Brückstraße) of <strong>TorFabrik Sky Sportsbar</strong>.</li>
+        <li><strong>15:30</strong> — <strong>Gladbach – BVB</strong> op het grote scherm. Bier, geschreeuw, Pils.</li>
+        <li><strong>17:45</strong> — Kerstmarkt ronde twee (laatste kans: zondag dicht). Glühwein op de Alter Markt, Feuerzangenbowle, gebrande amandelen.</li>
+        <li><strong>19:30</strong> — Diner. Topkeuze: <strong>Bergmann Kiosk</strong> (Hoher Wall 36 — Dortmunds craft-brouwerij, Export, Schwarzbier, eten erbij) of fijner: <strong>Emilio</strong> (Italiaans), <strong>Grammons</strong> (Kreuzviertel), <strong>Lemongrass</strong> (Vietnamees). Reserveer zaterdag altijd.</li>
+        <li><strong>21:30</strong> — Avondprogramma:
+          <ul>
+            <li>🎷 <strong>Jazztage: Fallen Crooner</strong>, domicil 20:00 (dan iets vroeger eten).</li>
+            <li>🍻 <strong>Brückstraßenviertel</strong>: kroegen en clubs rondom Brückstraße/Konzerthaus — Klubhaus (karaoke, quiz), Prisma Lounge, Collins Cocktailbar.</li>
+            <li>🍺 <strong>Kreuzviertel</strong>: gezelligste kroegenbuurt van de stad. The Londoner, Grüner Salon, Sissikingkong, Spirit of Dortmund.</li>
+            <li>⚓ <strong>Hafen</strong>: Subrosa (legendarische havenkroeg) + Junkyard (Soulbound &amp; Hell Boulevard).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="info-box">
+        <h4>🟡 Alternatief middagprogramma (als niemand de wedstrijd wil zien)</h4>
+        <ul>
+          <li><strong>Phoenix des Lumières</strong> — Matisse &amp; Frida Kahlo in de Hochofen-hal (U41 naar Hörde, dan 10 min lopen). Aansluitend <strong>Bergmann Brauerei</strong> op Phoenix-West voor een proeverij.</li>
+          <li><strong>Westfalenpark &amp; Florianturm</strong> — 200 m hoog, uitzicht over het hele Ruhrgebiet. Dicht bij het huis.</li>
+          <li><strong>Brauerei-Museum</strong> (Steigerstraße 16, Nordstadt) — gratis, de geschiedenis van Dortmund als bierhoofdstad van Europa.</li>
+        </ul>
+      </div>
+
+      <div class="tip">⚠️ <strong>Stadium Walk:</strong> niet op wedstrijddagen of de dag ervoor. Zaterdag 21 is een uit-dag en di 24 nov is pas de CL-thuiswedstrijd tegen Arsenal, dus zaterdag zou moeten kunnen. Boek via bvb.de of GetYourGuide om zeker te zijn.</div>
+    </section>
+
+    <section id="zondag" class="section day">
+      <div class="day-header">
+        <span class="day-num">Dag 3</span>
+        <h2>Zondag 22 november — Totensonntag, brunch &amp; terug</h2>
+      </div>
+      <p class="day-intro">Stille zondag: alles is rustig, kerstmarkt en winkels dicht. Perfect voor een brunch en een frisse wandeling vóór de terugreis.</p>
+      <ul class="schedule">
+        <li><strong>10:00</strong> — Inpakken, opruimen.</li>
+        <li><strong>11:00</strong> — Check-out. Bagage in de auto.</li>
+        <li><strong>11:15</strong> — Brunch. <strong>Grüner Salon</strong> (Kreuzviertel, "beste ontbijt van Dortmund"), <strong>omaRosa Café</strong>, of <strong>VRÜH</strong>. Of direct naar Hörde.</li>
+        <li><strong>13:00</strong> — Kies een uitwaai-optie:
+          <ul>
+            <li>🌊 <strong>Phoenix-See</strong> — rondje van 3,2 km om het kunstmatige meer op het oude Hoesch-staalterrein, koffie aan de kade in Hörde.</li>
+            <li>⛏️ <strong>Zeche Zollern</strong> (LWL-Museum, zo 10–18 uur) — "het kasteel van de arbeid", Jugendstil-machinehal uit 1904. Hét Ruhrgebiet-icoon, 20 min rijden, op de route naar het westen.</li>
+            <li>🏰 <strong>Hohensyburg</strong> — burchtruïne en Kaiser-Wilhelm-Denkmal boven de Hengsteysee, 20 min rijden naar het zuiden.</li>
+          </ul>
+        </li>
+        <li><strong>15:30</strong> — Terug naar Nederland (± 2,5–3 uur naar de Randstad via A1/A2, Oberhausen → Arnhem).</li>
+      </ul>
+
+      <div class="tip">🕯️ <strong>Totensonntag</strong> is de protestantse dodenzondag, een <em>stiller Feiertag</em> in NRW: geen openbare dansevenementen van 05:00 tot 18:00, kerstmarkten dicht, winkels dicht. Musea, restaurants, cafés, bakkers (ochtend) en tankstations zijn open.</div>
+    </section>
+
+    <section id="eten" class="section">
+      <h2>🍽️ Restaurants</h2>
+      <p class="day-intro">Een selectie voor drie vrienden die goed willen eten zonder poespas. Reserveer vrijdag- en zaterdagavond.</p>
+
+      <ul class="venue-list">
+        <li><span class="tag">Brouwerij · Duits</span><strong>Hövels Hausbrauerei</strong> — Hoher Wall 5–7. Dortmunds oudste huisbrouwerij, Hövels Original Bitterbier, Schnitzel, Haxe. Klassiek en vlakbij de kerstmarkt.<span class="meta">€€ · hoevels-hausbrauerei.de · reserveren aanbevolen</span></li>
+        <li><span class="tag">Brouwerij · Duits</span><strong>Wenkers am Markt</strong> — Betenstraße 1 (Alter Markt). Grote brouwerijkroeg op de hoek van de markt, Wenkers Urtrüb vers van de tap, flammkuchen en Westfaalse klassiekers. Perfect tussen twee glühweins door.<span class="meta">€€ · wenkers.de</span></li>
+        <li><span class="tag">Craft beer · Imbiss</span><strong>Bergmann Kiosk</strong> — Hoher Wall 36. De herrezen Dortmunder Bergmann Brauerei: Export, Adam, Schwarzbier, Spezial — met worst en burgers. Lokale hit. Grote broer: <strong>Bergmann Brauerei</strong> op Phoenix-West (rondleidingen + proeverij).<span class="meta">€ · bergmann-brauerei.de</span></li>
+        <li><span class="tag">Italiaans</span><strong>Emilio</strong> — Italiaans van de bovenste plank, bekend om truffelpasta. Een van de best beoordeelde restaurants van de stad.<span class="meta">€€–€€€ · reserveren</span></li>
+        <li><span class="tag">Vietnamees</span><strong>Lemongrass</strong> — Vietnamese keuken, gezellig, consistent top. Goed voor een lichtere avond.<span class="meta">€€</span></li>
+        <li><span class="tag">Sushi · Vietnamees</span><strong>Dylan's Sushi &amp; Vietnam</strong> — nummer 1 op Tripadvisor, uitzicht over de stad, moderne sfeer.<span class="meta">€€–€€€ · reserveren</span></li>
+        <li><span class="tag">Burgers · Grill</span><strong>Olafs</strong> — Kreuzviertel. Amerikaanse grill, ribs, "best burgers ever", goede craft-beerkaart.<span class="meta">€€</span></li>
+        <li><span class="tag">Vlees</span><strong>Hoeschkind</strong> — Voor vleesliefhebbers: steaks, burgers, Ruhrgebiet-stoer. Vernoemd naar de staalfabriek.<span class="meta">€€–€€€</span></li>
+        <li><span class="tag">Duits · modern</span><strong>Mit Schmackes</strong> — Moderne Duitse keuken, hippe sfeer, flinke porties.<span class="meta">€€</span></li>
+        <li><span class="tag">Griekse mezze</span><strong>Yamas</strong> — Kaiserstraße 24, 5 min van het huis. Griekse tapas, veel kleine gerechten delen — ideaal met z'n drieën.<span class="meta">€€</span></li>
+        <li><span class="tag">Buurtrestaurant</span><strong>Brüderlich</strong> — Kaiserstraße 92. Hip restaurant in het Kaiserviertel, seizoensgebonden kaart, goede cocktails.<span class="meta">€€ · bruederlich.restaurant</span></li>
+        <li><span class="tag">Ontbijt · brunch</span><strong>Grüner Salon</strong> (Kreuzviertel) · <strong>VRÜH All Day Breakfast</strong> · <strong>omaRosa Café</strong> · <strong>Café Schrader</strong> (Kaiserstraße 31) — voor zaterdag- en zondagochtend.<span class="meta">€</span></li>
+      </ul>
+    </section>
+
+    <section id="drinken" class="section">
+      <h2>🍻 Bars, kroegen &amp; uitgaan</h2>
+      <p class="day-intro">Dortmund heeft drie uitgaansbuurten: het <strong>Kreuzviertel</strong> (kroegen, studentikoos, gezellig), het <strong>Brückstraßenviertel</strong> (centrum, clubs, cocktails) en de <strong>Hafen</strong> (rauw, alternatief).</p>
+
+      <ul class="venue-list">
+        <li><span class="tag">Kreuzviertel</span><strong>The Londoner</strong> — Brits pub-gevoel, Engelse ales, sport op tv. Populairste pub van de buurt.</li>
+        <li><span class="tag">Kreuzviertel</span><strong>Grüner Salon</strong> — Klein, warm, goede muziek, interessante mensen. Overdag ontbijt, 's avonds bier en wijn.</li>
+        <li><span class="tag">Kreuzviertel</span><strong>Sissikingkong</strong> — Kunstzinnig café-bar met eigen karakter, lokaal instituut sinds 1998.</li>
+        <li><span class="tag">Kreuzviertel</span><strong>Spirit of Dortmund</strong> — Cocktail- en whiskybar, voor een goed glas na het eten.</li>
+        <li><span class="tag">Centrum · BVB</span><strong>Strobels</strong> — Strobelallee, pal naast het stadion. Dé BVB-fankroeg: wedstrijden op schermen, Bratwurst, 09-sfeer. Zaterdagmiddag hier.</li>
+        <li><span class="tag">Centrum · sport</span><strong>Klubhaus Dortmund</strong> — Karaoke, pubquiz, voetbal live. Luidruchtig en leuk.</li>
+        <li><span class="tag">Centrum · sport</span><strong>TorFabrik Sky Sportsbar</strong> — Sportsbar met alle wedstrijden, back-up voor Gladbach–BVB.</li>
+        <li><span class="tag">Centrum · jazz</span><strong>domicil Lounge Bar</strong> — Hansastraße 7–11. Onder de jazzclub, open tot laat, ontspannen.</li>
+        <li><span class="tag">Centrum · bier</span><strong>Bergmann Kiosk</strong> — Hoher Wall 36. Ook gewoon om alleen te drinken: proef je door de hele Bergmann-range.</li>
+        <li><span class="tag">Centrum · cocktails</span><strong>Collins Cocktailbar</strong> · <strong>Prisma Lounge</strong> · <strong>Volto Larva</strong> (Hoher Wall, chique) — voor als het fancy mag.</li>
+        <li><span class="tag">Hafen</span><strong>Subrosa</strong> — Gneisenaustraße. Legendarische havenkroeg "met ziel", live muziek, alternatief publiek. Een echte Dortmund-ervaring.</li>
+        <li><span class="tag">Hafen</span><strong>Junkyard</strong> — Schlägelstraße 57. Industrieel clubje voor rock/metal (za 21 nov: Soulbound &amp; Hell Boulevard).</li>
+        <li><span class="tag">Nordstadt</span><strong>FZW</strong> — Ritterstraße 20. Poppodium à la Melkweg; check het programma voor last-minute concerten en clubnachten.</li>
+      </ul>
+
+      <div class="tip">🍺 <strong>Bier-weetje:</strong> Dortmund was ooit de grootste bierstad van Europa (DAB, Union, Kronen, Thier, Hansa, Ritter, Stifts). Van die glorie resteert vooral DAB, maar met Bergmann, Hövels en Wenkers drink je weer echt lokaal. Vraag om een <em>Dortmunder Export</em> — de stijl die de stad beroemd maakte.</div>
+    </section>
+
+    <section id="reserveren" class="section">
+      <h2>📋 Reserveren &amp; tickets</h2>
+      <p class="day-intro">Wat je vooraf moet regelen, op volgorde van belangrijkheid.</p>
+
+      <div class="reservation-list">
+        <div class="res-item must">
+          <span class="res-tag">Must</span>
+          <div class="res-body">
+            <h4>Stadium Walk + Borusseum (za 21 nov, ~11:00)</h4>
+            <p>Boek via bvb.de/FanWelt of GetYourGuide. Controleer dat de walk op 21 nov draait. €18 combi p.p.</p>
+          </div>
+        </div>
+        <div class="res-item must">
+          <span class="res-tag">Must</span>
+          <div class="res-body">
+            <h4>Diner zaterdag 21 nov</h4>
+            <p>Zaterdag + kerstmarkt = vol. Reserveer Bergmann Kiosk / Emilio / Hövels voor 19:30 (of 18:30 als je naar Fallen Crooner wilt).</p>
+          </div>
+        </div>
+        <div class="res-item should">
+          <span class="res-tag">Should</span>
+          <div class="res-body">
+            <h4>Vrijdagavond: Eisadler óf Jazztage</h4>
+            <p>Eisadler-tickets via events.vereinsticket.de/eisadler (voorverkoop tot 18:30). Jazztage via domicil-dortmund.de of ADticket.</p>
+          </div>
+        </div>
+        <div class="res-item should">
+          <span class="res-tag">Should</span>
+          <div class="res-body">
+            <h4>Diner vrijdag 20 nov</h4>
+            <p>Hövels of Wenkers rond 18:30 — direct naast de markt, dus druk.</p>
+          </div>
+        </div>
+        <div class="res-item optional">
+          <span class="res-tag">Optie</span>
+          <div class="res-body">
+            <h4>Phoenix des Lumières</h4>
+            <p>Tijdslot boeken via phoenix-lumieres.com als je zaterdagmiddag of zondag gaat.</p>
+          </div>
+        </div>
+        <div class="res-item optional">
+          <span class="res-tag">Optie</span>
+          <div class="res-body">
+            <h4>Kaarten Gladbach – BVB</h4>
+            <p>Alleen als iemand via-via aan kaarten komt. Borussia-Park is 1u20 met de trein (RE naar Mönchengladbach Hbf + shuttlebus).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="praktisch" class="section">
+      <h2>🧳 Praktisch</h2>
+      <div class="practical-grid">
+        <div class="card">
+          <h3>🚗 Heen &amp; terug</h3>
+          <p>Vanuit de Randstad ± 2,5–3 uur via A12/A3 (Arnhem → Oberhausen) en A2/A40/B1. De B1 (Westfalendamm) loopt vlak langs de Wenkerstraße. Parkeren in het Kaiserviertel is bewonersparkeren/straat — check de Airbnb-instructies. Trein: ICE Amsterdam → Dortmund Hbf in ± 2u45 zonder overstap.</p>
+        </div>
+        <div class="card">
+          <h3>🚇 In de stad</h3>
+          <p>DSW21 U-Bahn/tram. Enkeltje ~€3,30, 24-uurskaart (TagesTicket) ~€9. Koop in de <em>DSW21</em>- of <em>DB Navigator</em>-app. Stadion: U45/U46 naar <em>Stadion</em> of <em>Westfalenhallen</em>. Hörde/Phoenix-See: U41. Westfalenpark: U45/U49.</p>
+        </div>
+        <div class="card">
+          <h3>💶 Geld</h3>
+          <p>Duitsland = cash. Kerstmarktkramen, Kneipen en kiosken nemen lang niet altijd pin. Haal €100 p.p. contant. Glühwein ±€4–5 + €3–4 Pfand voor de Jahresbecher (houden = souvenir).</p>
+        </div>
+        <div class="card">
+          <h3>🌡️ Weer</h3>
+          <p>Eind november: 3–8 °C, kans op regen. Warme jas, muts, handschoenen, waterdichte schoenen. Kerstmarkt is buiten; Stadium Walk deels buiten.</p>
+        </div>
+        <div class="card">
+          <h3>🟡 BVB-etiquette</h3>
+          <p>Geen Schalke-blauw dragen (grapje, maar ook niet). Geel-zwart mag altijd. "Heja BVB!" Op uit-dagen zitten de fankroegen vol — kom vroeg voor een tafel bij Strobels.</p>
+        </div>
+        <div class="card">
+          <h3>📞 Noodnummers &amp; adressen</h3>
+          <p>112 (ambulance/brandweer) · 110 (politie). Airbnb: <strong>Wenkerstraße 10, 44141 Dortmund</strong>. Dichtstbijzijnde ziekenhuis: Klinikum Dortmund Mitte, Beurhausstraße 40. Apotheek-nooddienst: aponet.de.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dortmund · 20–22 november 2026 · Juup, Jelle &amp; Tido</p>
+    <p class="small">Programma en openingstijden gecheckt op 14 nov 2026 — controleer kort vooraf nog even de sites van de locaties.</p>
+    <p class="small credit">Headerfoto: <a href="https://commons.wikimedia.org/wiki/File:Dortmund_Signal_Iduna_Park_4_defish.jpg">Signal Iduna Park</a>, Wikimedia Commons, CC BY-SA 3.0.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
