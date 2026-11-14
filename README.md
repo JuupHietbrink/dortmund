@@ -22,8 +22,8 @@ Elke push naar `main` wordt automatisch gepubliceerd (binnen ~1 minuut).
 ## Bestanden
 
 - `index.html` — de pagina met programma, events, restaurants en bars
-- `style.css` — styling (BVB-thema: zwart & geel)
+- `style.css` — styling (Kerstmarkt- & bierthema: goud, glühweinrood & dennengroen)
 - `script.js` — actieve nav + interactieve Leaflet-kaart
 - `.nojekyll` — voorkomt Jekyll-processing op GitHub Pages
 
-Heja BVB!
+Prost & frohe Weihnachten! 🍺🎄
