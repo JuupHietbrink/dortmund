@@ -41,7 +41,7 @@ a:hover { color: var(--ink); }
   min-height: 92vh;
   background:
     linear-gradient(180deg, rgba(20, 30, 25, 0.35) 0%, rgba(20, 30, 25, 0.78) 100%),
-    url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Dortmund_Hansaplatz_Weihnachtsbaum.jpg/1920px-Dortmund_Hansaplatz_Weihnachtsbaum.jpg') center/cover;
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Auf_dem_Weihnachtsmarkt_in_Dortmund._%2845410891845%29.jpg/1920px-Auf_dem_Weihnachtsmarkt_in_Dortmund._%2845410891845%29.jpg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
