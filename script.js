@@ -28,7 +28,7 @@ const CATEGORIES = {
 
 const PLACES = [
   { cat: 'home', lat: 51.5056, lng: 7.4781, name: 'Airbnb — Wenkerstraße 10',
-    when: 'vr ± 23:00 – zo 11:00', note: 'Kaiserstraßenviertel, 15–20 min lopen naar het centrum. Vrijdag late check-in na het ijshockey.',
+    when: 'vr ± 19:10 – zo 11:00', note: 'Kaiserstraßenviertel, 15–20 min lopen naar het centrum. Vrijdag snel inchecken, dan U45 naar het ijshockey.',
     link: gmaps('Wenkerstraße 10, 44141') },
 
   // Sights
@@ -56,7 +56,7 @@ const PLACES = [
     when: 'vr & za 11–22 · zo dicht', note: '250+ kramen, de 45 m hoge kerstboom, glühwein uit de Jahresbecher.',
     link: 'https://www.weihnachtsstadt-do.de/' },
   { cat: 'event', lat: 51.4952, lng: 7.4583, name: 'Eissportzentrum Westfalen',
-    when: 'vr 20 nov · 20:00 · ✅ geboekt', note: 'Eisadler Dortmund – Adendorfer EC. Vrijdag rechtstreeks vanuit Utrecht hierheen; parkeren bij de Westfalenhallen. IJshockey, bier, herrie.',
+    when: 'vr 20 nov · 20:00 · ✅ geboekt', note: 'Eisadler Dortmund – Adendorfer EC. U45 Westfalenpark → Westfalenhallen (2 haltes), dan 5 min lopen. IJshockey, bier, herrie.',
     link: 'https://events.vereinsticket.de/eisadler/eisho-heimspiele/5241652' },
   { cat: 'event', lat: 51.5158, lng: 7.4637, name: 'domicil — Jazztage Dortmund',
     when: 'za · 20:00 (vr = ijshockey)', note: 'Fallen Crooner (za). Vrijdag Julie Campiche / Nucleus, maar dan zitten we bij de Eisadler. Lounge Bar beneden.',
