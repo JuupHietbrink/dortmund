@@ -28,12 +28,12 @@ const CATEGORIES = {
 
 const PLACES = [
   { cat: 'home', lat: 51.5056, lng: 7.4781, name: 'Airbnb — Wenkerstraße 10',
-    when: 'vr 14:00 – zo 11:00', note: 'Kaiserstraßenviertel, 15–20 min lopen naar het centrum.',
+    when: 'vr ± 23:00 – zo 11:00', note: 'Kaiserstraßenviertel, 15–20 min lopen naar het centrum. Vrijdag late check-in na het ijshockey.',
     link: gmaps('Wenkerstraße 10, 44141') },
 
   // Sights
   { cat: 'sight', lat: 51.5162, lng: 7.4579, name: 'Deutsches Fußballmuseum',
-    when: 'vr 20 nov · 15:00', note: 'WK-bekers, Bundesliga-hal, 3D-cinema. Open tot 18:00.',
+    when: 'optioneel za/zo', note: 'WK-bekers, Bundesliga-hal, 3D-cinema. Open tot 18:00.',
     link: 'https://www.fussballmuseum.de/' },
   { cat: 'sight', lat: 51.5150, lng: 7.4548, name: 'Dortmunder U',
     when: 'di–zo', note: 'Museum Ostwall (gratis) in de oude Union-brouwerij.',
@@ -56,7 +56,7 @@ const PLACES = [
     when: 'vr & za 11–22 · zo dicht', note: '250+ kramen, de 45 m hoge kerstboom, glühwein uit de Jahresbecher.',
     link: 'https://www.weihnachtsstadt-do.de/' },
   { cat: 'event', lat: 51.4952, lng: 7.4583, name: 'Eissportzentrum Westfalen',
-    when: 'vr 20 nov · 20:00 · ✅ geboekt', note: 'Eisadler Dortmund – Adendorfer EC. U45 → Westfalenhallen, dan 5 min lopen. IJshockey, bier, herrie.',
+    when: 'vr 20 nov · 20:00 · ✅ geboekt', note: 'Eisadler Dortmund – Adendorfer EC. Vrijdag rechtstreeks vanuit Utrecht hierheen; parkeren bij de Westfalenhallen. IJshockey, bier, herrie.',
     link: 'https://events.vereinsticket.de/eisadler/eisho-heimspiele/5241652' },
   { cat: 'event', lat: 51.5158, lng: 7.4637, name: 'domicil — Jazztage Dortmund',
     when: 'za · 20:00 (vr = ijshockey)', note: 'Fallen Crooner (za). Vrijdag Julie Campiche / Nucleus, maar dan zitten we bij de Eisadler. Lounge Bar beneden.',
@@ -73,7 +73,7 @@ const PLACES = [
 
   // Food & drink
   { cat: 'food', lat: 51.5125, lng: 7.4585, name: 'Hövels Hausbrauerei',
-    when: 'vr diner', note: 'Oudste huisbrouwerij van Dortmund, Bitterbier en Westfaalse keuken.',
+    when: 'za diner 19:30 (reserveren)', note: 'Oudste huisbrouwerij van Dortmund, Bitterbier en Westfaalse keuken.',
     link: 'https://www.hoevels-hausbrauerei.de/' },
   { cat: 'food', lat: 51.5137, lng: 7.4660, name: 'Wenkers am Markt',
     when: 'vr/za', note: 'Brouwerijkroeg op de Alter Markt, midden in de kerstmarkt.',
