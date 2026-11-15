@@ -73,7 +73,7 @@ const PLACES = [
 
   // Food & drink
   { cat: 'food', lat: 51.5125, lng: 7.4585, name: 'Hövels Hausbrauerei',
-    when: 'za diner 19:30 (reserveren)', note: 'Oudste huisbrouwerij van Dortmund, Bitterbier en Westfaalse keuken.',
+    when: 'za 21 nov · 19:00 · ✅ gereserveerd', note: 'Oudste huisbrouwerij van Dortmund, Bitterbier en Westfaalse keuken.',
     link: 'https://www.hoevels-hausbrauerei.de/' },
   { cat: 'food', lat: 51.5137, lng: 7.4660, name: 'Wenkers am Markt',
     when: 'vr/za', note: 'Brouwerijkroeg op de Alter Markt, midden in de kerstmarkt.',
