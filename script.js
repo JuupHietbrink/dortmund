@@ -88,7 +88,7 @@ const PLACES = [
     when: 'za 15:30 · Gladbach–BVB', note: 'Dé BVB-fankroeg naast het stadion. Wedstrijd op groot scherm.',
     link: 'https://www.strobels-dortmund.de/' },
   { cat: 'food', lat: 51.5035, lng: 7.4532, name: 'Kreuzviertel',
-    when: 'avonden', note: 'Kroegenbuurt: The Londoner, Grüner Salon, Sissikingkong, Olafs, Grammons.',
+    when: 'avonden', note: 'Kroegenbuurt: The Londoner, Grüner Salon, Sissikingkong, Grammons.',
     link: gmaps('Kreuzviertel') },
   { cat: 'food', lat: 51.5176, lng: 7.4646, name: 'Brückstraßenviertel',
     when: 'za avond', note: 'Klubhaus, Collins, Prisma Lounge — uitgaan in het centrum.',
