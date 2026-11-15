@@ -393,6 +393,8 @@ a:hover { color: var(--ink); }
 .res-item.must .res-tag { background: #b8423a; }
 .res-item.should .res-tag { background: var(--sand-dark); }
 .res-item.optional .res-tag { background: #8a8676; }
+.res-item.done .res-tag { background: #1f4d3a; }
+.res-item.done { opacity: 0.85; }
 
 .res-body {
   padding: 1.25rem 1.5rem;
